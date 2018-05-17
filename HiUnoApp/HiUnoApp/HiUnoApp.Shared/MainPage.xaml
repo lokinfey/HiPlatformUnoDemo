@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="HiUnoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HiUnoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:HiUnoApp.Shared.Model"
+    xmlns:toolkit ="using:Uno.UI.Toolkit"
+    xmlns:ios="http://uno.ui/ios"
+    xmlns:android="http://uno.ui/android"
+    xmlns:xamarin="http://uni.ui/xamarin"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+    </Page.Resources>
+
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="15,15,15,0">
+            <TextBlock Text="Platform.Uno  Demo" 
+                       FontSize="30" FontWeight="Bold"
+                       Foreground="White" />
+            <TextBlock Text="Platform.Uno" Foreground="White" />
+        </StackPanel>
+
+        <ListView Name="MyListView" Grid.Row="1" 
+                  SelectionMode="None" 
+                  HorizontalAlignment="Center"
+                  Width="1000"
+                  Margin="20" 
+                  ItemsSource="{Binding}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="8">
+                        <Image Source="{Binding VideoImage}"  Width="160" Height="90" />
+                        <TextBlock Text="{Binding VideoName}" Foreground="White" HorizontalAlignment="Center" />
+                        <TextBlock Text="{Binding Teacher}" Foreground="White" HorizontalAlignment="Center"  />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>
